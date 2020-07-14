@@ -108,7 +108,7 @@ SUBSYSTEM_DEF(skybox)
 	for(var/z in zlevels)
 		skybox_cache["[z]"] = generate_skybox(z)
 
-	for(var/client/C)
+	for(var/client/C in GLOB.clients)
 		C.update_skybox(1)
 
 // Settings datum that maps can override to play with their skyboxes
